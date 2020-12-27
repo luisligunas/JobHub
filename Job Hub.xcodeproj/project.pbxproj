@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		647124B825984E9800B8D38E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 647124B625984E9800B8D38E /* LaunchScreen.storyboard */; };
 		647124C325984E9800B8D38E /* Job_HubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124C225984E9800B8D38E /* Job_HubTests.swift */; };
 		647124CE25984E9800B8D38E /* Job_HubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124CD25984E9800B8D38E /* Job_HubUITests.swift */; };
+		64712504259860E700B8D38E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64712503259860E700B8D38E /* R.generated.swift */; };
 		951BA35B82DB27EA93172CF2 /* Pods_Job_HubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB83F4037D48030AE25D4813 /* Pods_Job_HubTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		647124C925984E9800B8D38E /* Job HubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Job HubUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647124CD25984E9800B8D38E /* Job_HubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job_HubUITests.swift; sourceTree = "<group>"; };
 		647124CF25984E9800B8D38E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64712503259860E700B8D38E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		695EB3D3C2C525508127300C /* Pods-Job Hub-Job HubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hub-Job HubUITests.debug.xcconfig"; path = "Target Support Files/Pods-Job Hub-Job HubUITests/Pods-Job Hub-Job HubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		79800A8454D1E1EF04C023C5 /* Pods_Job_Hub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_Hub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE69958CB773DD7EDFEF940 /* Pods-Job Hub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hub.debug.xcconfig"; path = "Target Support Files/Pods-Job Hub/Pods-Job Hub.debug.xcconfig"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				647124A725984E9500B8D38E /* Job Hub */,
+				6471250225985FB000B8D38E /* Assets */,
 				647124C125984E9800B8D38E /* Job HubTests */,
 				647124CC25984E9800B8D38E /* Job HubUITests */,
 				647124A625984E9500B8D38E /* Products */,
@@ -131,8 +134,8 @@
 			children = (
 				647124A825984E9500B8D38E /* AppDelegate.swift */,
 				647124AC25984E9500B8D38E /* ViewController.swift */,
+				64712503259860E700B8D38E /* R.generated.swift */,
 				647124AE25984E9500B8D38E /* Main.storyboard */,
-				647124B425984E9800B8D38E /* Assets.xcassets */,
 				647124B625984E9800B8D38E /* LaunchScreen.storyboard */,
 				647124B925984E9800B8D38E /* Info.plist */,
 				647124B125984E9500B8D38E /* Job_Hub.xcdatamodeld */,
@@ -158,6 +161,14 @@
 			path = "Job HubUITests";
 			sourceTree = "<group>";
 		};
+		6471250225985FB000B8D38E /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				647124B425984E9800B8D38E /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
 		677436ACB1A4A0D93D46A6EF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,9 +187,11 @@
 			buildConfigurationList = 647124D225984E9800B8D38E /* Build configuration list for PBXNativeTarget "Job Hub" */;
 			buildPhases = (
 				88A9F45E52717856AD4A28BA /* [CP] Check Pods Manifest.lock */,
+				647124FE25985F2000B8D38E /* ShellScript */,
 				647124A125984E9500B8D38E /* Sources */,
 				647124A225984E9500B8D38E /* Frameworks */,
 				647124A325984E9500B8D38E /* Resources */,
+				CE7653D0E1A0FD904BE26D31 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -216,6 +229,7 @@
 				647124C525984E9800B8D38E /* Sources */,
 				647124C625984E9800B8D38E /* Frameworks */,
 				647124C725984E9800B8D38E /* Resources */,
+				FEF382892FD9E9FCE6B5C61F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,6 +311,25 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		647124FE25985F2000B8D38E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/R.generated.swift\"\n";
+		};
 		88A9F45E52717856AD4A28BA /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -341,6 +374,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		CE7653D0E1A0FD904BE26D31 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Job Hub/Pods-Job Hub-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Job Hub/Pods-Job Hub-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Job Hub/Pods-Job Hub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F93CBC4758667198AACE10C7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -363,6 +413,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FEF382892FD9E9FCE6B5C61F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Job Hub-Job HubUITests/Pods-Job Hub-Job HubUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Job Hub-Job HubUITests/Pods-Job Hub-Job HubUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Job Hub-Job HubUITests/Pods-Job Hub-Job HubUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -373,6 +440,7 @@
 				647124AD25984E9500B8D38E /* ViewController.swift in Sources */,
 				647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */,
 				647124A925984E9500B8D38E /* AppDelegate.swift in Sources */,
+				64712504259860E700B8D38E /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

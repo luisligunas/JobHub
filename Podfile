@@ -6,6 +6,7 @@ target 'Job Hub' do
   use_frameworks!
 
   # Pods for Job Hub
+  pod 'R.swift'
 
   target 'Job HubTests' do
     inherit! :search_paths
