@@ -11,4 +11,5 @@ import UIKit
 struct PrimaryTheme: Theme {
 	var backgroundColor: UIColor { return .primaryColor }
 	var textColor: UIColor { return .tertiaryColor }
+	var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 }

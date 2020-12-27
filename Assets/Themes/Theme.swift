@@ -11,9 +11,11 @@ import UIKit
 protocol Theme {
 	var backgroundColor: UIColor { get }
 	var textColor: UIColor { get }
+	var preferredStatusBarStyle: UIStatusBarStyle { get }
 }
 
 extension Theme {
 	var backgroundColor: UIColor { return .primaryColor }
 	var textColor: UIColor { return .tertiaryColor }
+	var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
 }

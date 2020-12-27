@@ -9,11 +9,11 @@ import Foundation
 
 struct GetJobListResponseItem: Codable {
 	let id: String
-	let type: JobType
+	let type: GetJobListResponseItemJobType
 	let url: String
 	let createdAt, company: String
 	let companyURL: String?
-	let location, title, bruhDescription, howToApply: String
+	let location, title, description, howToApply: String
 	let companyLogo: String?
 	
 	enum CodingKeys: String, CodingKey {
@@ -22,16 +22,42 @@ struct GetJobListResponseItem: Codable {
 		case company
 		case companyURL = "company_url"
 		case location, title
-		case bruhDescription = "description"
+		case description
 		case howToApply = "how_to_apply"
 		case companyLogo = "company_logo"
 	}
 }
 
-enum JobType: String, Codable {
+enum GetJobListResponseItemJobType: String, Codable {
 	case contract = "Contract"
 	case fullTime = "Full Time"
 	case partTime = "Part Time"
 }
 
 typealias GetJobListResponse = [GetJobListResponseItem]
+
+extension GetJobListResponseItem {
+	var asJob: Job {
+		return .init(id: id,
+					 jobType: type.asJobType,
+					 url: url,
+					 createdAt: createdAt,
+					 company: company,
+					 companyURL: companyURL,
+					 location: location,
+					 title: title,
+					 description: description,
+					 howToApply: howToApply,
+					 companyLogo: companyLogo)
+	}
+}
+
+extension GetJobListResponseItemJobType {
+	var asJobType: JobType {
+		switch self {
+		case .contract: return .contract
+		case .fullTime: return .fullTime
+		case .partTime: return .partTime
+		}
+	}
+}
