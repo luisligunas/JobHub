@@ -10,7 +10,6 @@
 		08DC6B55AD0B75D6F96E5524 /* Pods_Job_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79800A8454D1E1EF04C023C5 /* Pods_Job_Hub.framework */; };
 		31098DF509CCDBA597646996 /* Pods_Job_Hub_Job_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5857A2409D802D92D4426E9 /* Pods_Job_Hub_Job_HubUITests.framework */; };
 		647124A925984E9500B8D38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124A825984E9500B8D38E /* AppDelegate.swift */; };
-		647124AB25984E9500B8D38E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124AA25984E9500B8D38E /* SceneDelegate.swift */; };
 		647124AD25984E9500B8D38E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124AC25984E9500B8D38E /* ViewController.swift */; };
 		647124B025984E9500B8D38E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 647124AE25984E9500B8D38E /* Main.storyboard */; };
 		647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 647124B125984E9500B8D38E /* Job_Hub.xcdatamodeld */; };
@@ -42,7 +41,6 @@
 		3E1175F9AE99F10CFDF70D09 /* Pods-Job HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job HubTests.release.xcconfig"; path = "Target Support Files/Pods-Job HubTests/Pods-Job HubTests.release.xcconfig"; sourceTree = "<group>"; };
 		647124A525984E9500B8D38E /* Job Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647124A825984E9500B8D38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		647124AA25984E9500B8D38E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		647124AC25984E9500B8D38E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		647124AF25984E9500B8D38E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		647124B225984E9500B8D38E /* Job_Hub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Job_Hub.xcdatamodel; sourceTree = "<group>"; };
@@ -103,7 +101,6 @@
 				B054EA6EC22E15FF4E3C787D /* Pods-Job HubTests.debug.xcconfig */,
 				3E1175F9AE99F10CFDF70D09 /* Pods-Job HubTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -133,7 +130,6 @@
 			isa = PBXGroup;
 			children = (
 				647124A825984E9500B8D38E /* AppDelegate.swift */,
-				647124AA25984E9500B8D38E /* SceneDelegate.swift */,
 				647124AC25984E9500B8D38E /* ViewController.swift */,
 				647124AE25984E9500B8D38E /* Main.storyboard */,
 				647124B425984E9800B8D38E /* Assets.xcassets */,
@@ -377,7 +373,6 @@
 				647124AD25984E9500B8D38E /* ViewController.swift in Sources */,
 				647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */,
 				647124A925984E9500B8D38E /* AppDelegate.swift in Sources */,
-				647124AB25984E9500B8D38E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +478,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -538,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -554,17 +549,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F67NT7LZM;
+				DEVELOPMENT_TEAM = P9VM94332G;
 				INFOPLIST_FILE = "Job Hub/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.luisligunas.jobhub.Job-Hub";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luisligunas.jobhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -574,17 +571,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F67NT7LZM;
+				DEVELOPMENT_TEAM = P9VM94332G;
 				INFOPLIST_FILE = "Job Hub/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.luisligunas.jobhub.Job-Hub";
+				PRODUCT_BUNDLE_IDENTIFIER = com.luisligunas.jobhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -595,7 +594,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F67NT7LZM;
+				DEVELOPMENT_TEAM = P9VM94332G;
 				INFOPLIST_FILE = "Job HubTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -618,7 +617,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6F67NT7LZM;
+				DEVELOPMENT_TEAM = P9VM94332G;
 				INFOPLIST_FILE = "Job HubTests/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
