@@ -22,10 +22,9 @@
 		6471253B2598882B00B8D38E /* Glegoo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 647125382598882B00B8D38E /* Glegoo-Regular.ttf */; };
 		6471253C2598882B00B8D38E /* Glegoo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 647125392598882B00B8D38E /* Glegoo-Bold.ttf */; };
 		6471254425988F9600B8D38E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471254325988F9600B8D38E /* UIColor+Extensions.swift */; };
-		6471254A2598926900B8D38E /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647125492598926900B8D38E /* ColorTheme.swift */; };
-		64712553259892CF00B8D38E /* PrimaryColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64712552259892CF00B8D38E /* PrimaryColorTheme.swift */; };
-		6471255B25989C4C00B8D38E /* BackgroundColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471255A25989C4C00B8D38E /* BackgroundColor.swift */; };
-		6471256025989C7A00B8D38E /* TextColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471255F25989C7A00B8D38E /* TextColor.swift */; };
+		647125772598B96500B8D38E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647125762598B96500B8D38E /* Theme.swift */; };
+		647125802598BCDA00B8D38E /* PrimaryTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471257F2598BCDA00B8D38E /* PrimaryTheme.swift */; };
+		647125882598BD4500B8D38E /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647125872598BD4500B8D38E /* ThemeService.swift */; };
 		951BA35B82DB27EA93172CF2 /* Pods_Job_HubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB83F4037D48030AE25D4813 /* Pods_Job_HubTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,10 +66,9 @@
 		647125382598882B00B8D38E /* Glegoo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Glegoo-Regular.ttf"; sourceTree = "<group>"; };
 		647125392598882B00B8D38E /* Glegoo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Glegoo-Bold.ttf"; sourceTree = "<group>"; };
 		6471254325988F9600B8D38E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		647125492598926900B8D38E /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
-		64712552259892CF00B8D38E /* PrimaryColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryColorTheme.swift; sourceTree = "<group>"; };
-		6471255A25989C4C00B8D38E /* BackgroundColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundColor.swift; sourceTree = "<group>"; };
-		6471255F25989C7A00B8D38E /* TextColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColor.swift; sourceTree = "<group>"; };
+		647125762598B96500B8D38E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		6471257F2598BCDA00B8D38E /* PrimaryTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryTheme.swift; sourceTree = "<group>"; };
+		647125872598BD4500B8D38E /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		695EB3D3C2C525508127300C /* Pods-Job Hub-Job HubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hub-Job HubUITests.debug.xcconfig"; path = "Target Support Files/Pods-Job Hub-Job HubUITests/Pods-Job Hub-Job HubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		79800A8454D1E1EF04C023C5 /* Pods_Job_Hub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_Hub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EE69958CB773DD7EDFEF940 /* Pods-Job Hub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hub.debug.xcconfig"; path = "Target Support Files/Pods-Job Hub/Pods-Job Hub.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,6 +178,7 @@
 		6471250225985FB000B8D38E /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				6471257E2598BCCE00B8D38E /* Themes */,
 				647125482598926100B8D38E /* Colors */,
 				647125352598880900B8D38E /* Fonts */,
 				647124B425984E9800B8D38E /* Assets.xcassets */,
@@ -209,20 +208,18 @@
 			isa = PBXGroup;
 			children = (
 				6471254325988F9600B8D38E /* UIColor+Extensions.swift */,
-				6471255A25989C4C00B8D38E /* BackgroundColor.swift */,
-				6471255F25989C7A00B8D38E /* TextColor.swift */,
-				64712551259892C200B8D38E /* ColorTheme */,
 			);
 			path = Colors;
 			sourceTree = "<group>";
 		};
-		64712551259892C200B8D38E /* ColorTheme */ = {
+		6471257E2598BCCE00B8D38E /* Themes */ = {
 			isa = PBXGroup;
 			children = (
-				647125492598926900B8D38E /* ColorTheme.swift */,
-				64712552259892CF00B8D38E /* PrimaryColorTheme.swift */,
+				647125762598B96500B8D38E /* Theme.swift */,
+				647125872598BD4500B8D38E /* ThemeService.swift */,
+				6471257F2598BCDA00B8D38E /* PrimaryTheme.swift */,
 			);
-			path = ColorTheme;
+			path = Themes;
 			sourceTree = "<group>";
 		};
 		677436ACB1A4A0D93D46A6EF /* Frameworks */ = {
@@ -497,14 +494,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				647124AD25984E9500B8D38E /* ViewController.swift in Sources */,
+				647125882598BD4500B8D38E /* ThemeService.swift in Sources */,
 				6471254425988F9600B8D38E /* UIColor+Extensions.swift in Sources */,
 				647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */,
-				6471254A2598926900B8D38E /* ColorTheme.swift in Sources */,
 				647124A925984E9500B8D38E /* AppDelegate.swift in Sources */,
-				6471256025989C7A00B8D38E /* TextColor.swift in Sources */,
-				64712553259892CF00B8D38E /* PrimaryColorTheme.swift in Sources */,
+				647125802598BCDA00B8D38E /* PrimaryTheme.swift in Sources */,
+				647125772598B96500B8D38E /* Theme.swift in Sources */,
 				64712504259860E700B8D38E /* R.generated.swift in Sources */,
-				6471255B25989C4C00B8D38E /* BackgroundColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

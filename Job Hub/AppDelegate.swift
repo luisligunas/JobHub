@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		
+		ThemeService.setTheme(.primary)
+		
 		let navigationController = UINavigationController(rootViewController: UIViewController())
 		navigationController.setNavigationBarHidden(true, animated: true)
 		
