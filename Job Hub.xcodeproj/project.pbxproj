@@ -659,7 +659,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B054EA6EC22E15FF4E3C787D /* Pods-Job HubTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9VM94332G;
@@ -682,7 +682,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E1175F9AE99F10CFDF70D09 /* Pods-Job HubTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P9VM94332G;
@@ -705,7 +705,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 695EB3D3C2C525508127300C /* Pods-Job Hub-Job HubUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F67NT7LZM;
 				INFOPLIST_FILE = "Job HubUITests/Info.plist";
@@ -726,7 +726,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = AC1E1C643363E15276BE11ED /* Pods-Job Hub-Job HubUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6F67NT7LZM;
 				INFOPLIST_FILE = "Job HubUITests/Info.plist";
