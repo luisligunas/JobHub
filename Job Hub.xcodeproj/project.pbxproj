@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		08DC6B55AD0B75D6F96E5524 /* Pods_Job_Hub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79800A8454D1E1EF04C023C5 /* Pods_Job_Hub.framework */; };
 		31098DF509CCDBA597646996 /* Pods_Job_Hub_Job_HubUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5857A2409D802D92D4426E9 /* Pods_Job_Hub_Job_HubUITests.framework */; };
+		644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1EA2598E35800B8A1D9 /* APIManager.swift */; };
+		644EF1FB2598E3DC00B8A1D9 /* GitHubJobsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */; };
+		644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */; };
+		644EF2102598E54500B8A1D9 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF20F2598E54500B8A1D9 /* RequestParameter.swift */; };
+		644EF2182598E5D800B8A1D9 /* GetJobListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF2172598E5D800B8A1D9 /* GetJobListResponse.swift */; };
 		647124A925984E9500B8D38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124A825984E9500B8D38E /* AppDelegate.swift */; };
 		647124AD25984E9500B8D38E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124AC25984E9500B8D38E /* ViewController.swift */; };
 		647124B025984E9500B8D38E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 647124AE25984E9500B8D38E /* Main.storyboard */; };
@@ -47,6 +52,11 @@
 
 /* Begin PBXFileReference section */
 		3E1175F9AE99F10CFDF70D09 /* Pods-Job HubTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job HubTests.release.xcconfig"; path = "Target Support Files/Pods-Job HubTests/Pods-Job HubTests.release.xcconfig"; sourceTree = "<group>"; };
+		644EF1EA2598E35800B8A1D9 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubJobsAPI.swift; sourceTree = "<group>"; };
+		644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJobListOptions.swift; sourceTree = "<group>"; };
+		644EF20F2598E54500B8A1D9 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
+		644EF2172598E5D800B8A1D9 /* GetJobListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJobListResponse.swift; sourceTree = "<group>"; };
 		647124A525984E9500B8D38E /* Job Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647124A825984E9500B8D38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		647124AC25984E9500B8D38E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,10 +130,39 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		644EF1E92598E34100B8A1D9 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				644EF1EA2598E35800B8A1D9 /* APIManager.swift */,
+				644EF20F2598E54500B8A1D9 /* RequestParameter.swift */,
+				644EF1FF2598E3DF00B8A1D9 /* GitHubJobs */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		644EF1FF2598E3DF00B8A1D9 /* GitHubJobs */ = {
+			isa = PBXGroup;
+			children = (
+				644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */,
+				644EF2032598E51000B8A1D9 /* GetJobList */,
+			);
+			path = GitHubJobs;
+			sourceTree = "<group>";
+		};
+		644EF2032598E51000B8A1D9 /* GetJobList */ = {
+			isa = PBXGroup;
+			children = (
+				644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */,
+				644EF2172598E5D800B8A1D9 /* GetJobListResponse.swift */,
+			);
+			path = GetJobList;
+			sourceTree = "<group>";
+		};
 		6471249C25984E9500B8D38E = {
 			isa = PBXGroup;
 			children = (
 				647124A725984E9500B8D38E /* Job Hub */,
+				644EF1E92598E34100B8A1D9 /* Networking */,
 				6471250225985FB000B8D38E /* Assets */,
 				647124C125984E9800B8D38E /* Job HubTests */,
 				647124CC25984E9800B8D38E /* Job HubUITests */,
@@ -493,9 +532,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */,
 				647124AD25984E9500B8D38E /* ViewController.swift in Sources */,
 				647125882598BD4500B8D38E /* ThemeService.swift in Sources */,
+				644EF2102598E54500B8A1D9 /* RequestParameter.swift in Sources */,
 				6471254425988F9600B8D38E /* UIColor+Extensions.swift in Sources */,
+				644EF1FB2598E3DC00B8A1D9 /* GitHubJobsAPI.swift in Sources */,
+				644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */,
+				644EF2182598E5D800B8A1D9 /* GetJobListResponse.swift in Sources */,
 				647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */,
 				647124A925984E9500B8D38E /* AppDelegate.swift in Sources */,
 				647125802598BCDA00B8D38E /* PrimaryTheme.swift in Sources */,

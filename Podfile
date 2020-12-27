@@ -7,6 +7,7 @@ target 'Job Hub' do
   use_frameworks!
 
   # Pods for Job Hub
+  pod 'Moya'
   pod 'R.swift'
   pod 'SnapKit'
 
