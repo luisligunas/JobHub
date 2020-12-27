@@ -22,6 +22,10 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
+# Xcode User Profile
+Job Hub.xcodeproj/xcuserdata/*
+Job Hub.xcworkspace/xcuserdata/*
+
 ## Obj-C/Swift specific
 *.hmap
 
@@ -54,10 +58,10 @@ playground.xcworkspace
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
 #
-# Pods/
+Pods/
 #
 # Add this line if you want to avoid checking in source code from the Xcode workspace
-# *.xcworkspace
+*.xcworkspace
 
 # Carthage
 #
@@ -88,3 +92,10 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+
+# Hidden file for MacOS
+*/.DS_Store
+.DS_Store
+
+# R.swift
+*.generated.swift
