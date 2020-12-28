@@ -14,8 +14,14 @@
 		644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */; };
 		644EF2102598E54500B8A1D9 /* RequestParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF20F2598E54500B8A1D9 /* RequestParameter.swift */; };
 		644EF2182598E5D800B8A1D9 /* GetJobListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF2172598E5D800B8A1D9 /* GetJobListResponse.swift */; };
+		644EF2352598F45D00B8A1D9 /* JobListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF2342598F45D00B8A1D9 /* JobListViewController.swift */; };
+		644EF23A2598F8C100B8A1D9 /* JobListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF2392598F8C100B8A1D9 /* JobListViewModel.swift */; };
+		644EF2402598F92D00B8A1D9 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF23F2598F92D00B8A1D9 /* Job.swift */; };
+		644EF2482598FC7300B8A1D9 /* JobListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF2472598FC7300B8A1D9 /* JobListProvider.swift */; };
+		644EF24E2598FCDF00B8A1D9 /* GitHubJobListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF24D2598FCDF00B8A1D9 /* GitHubJobListService.swift */; };
+		644EF25D2598FEE400B8A1D9 /* JHError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF25C2598FEE400B8A1D9 /* JHError.swift */; };
+		644EF266259902D400B8A1D9 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF265259902D400B8A1D9 /* Date+Extensions.swift */; };
 		647124A925984E9500B8D38E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124A825984E9500B8D38E /* AppDelegate.swift */; };
-		647124AD25984E9500B8D38E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647124AC25984E9500B8D38E /* ViewController.swift */; };
 		647124B025984E9500B8D38E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 647124AE25984E9500B8D38E /* Main.storyboard */; };
 		647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 647124B125984E9500B8D38E /* Job_Hub.xcdatamodeld */; };
 		647124B525984E9800B8D38E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 647124B425984E9800B8D38E /* Assets.xcassets */; };
@@ -57,9 +63,15 @@
 		644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJobListOptions.swift; sourceTree = "<group>"; };
 		644EF20F2598E54500B8A1D9 /* RequestParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestParameter.swift; sourceTree = "<group>"; };
 		644EF2172598E5D800B8A1D9 /* GetJobListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJobListResponse.swift; sourceTree = "<group>"; };
+		644EF2342598F45D00B8A1D9 /* JobListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewController.swift; sourceTree = "<group>"; };
+		644EF2392598F8C100B8A1D9 /* JobListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListViewModel.swift; sourceTree = "<group>"; };
+		644EF23F2598F92D00B8A1D9 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		644EF2472598FC7300B8A1D9 /* JobListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListProvider.swift; sourceTree = "<group>"; };
+		644EF24D2598FCDF00B8A1D9 /* GitHubJobListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubJobListService.swift; sourceTree = "<group>"; };
+		644EF25C2598FEE400B8A1D9 /* JHError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHError.swift; sourceTree = "<group>"; };
+		644EF265259902D400B8A1D9 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		647124A525984E9500B8D38E /* Job Hub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Job Hub.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		647124A825984E9500B8D38E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		647124AC25984E9500B8D38E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		647124AF25984E9500B8D38E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		647124B225984E9500B8D38E /* Job_Hub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Job_Hub.xcdatamodel; sourceTree = "<group>"; };
 		647124B425984E9800B8D38E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,11 +170,57 @@
 			path = GetJobList;
 			sourceTree = "<group>";
 		};
+		644EF2332598F44E00B8A1D9 /* Job List */ = {
+			isa = PBXGroup;
+			children = (
+				644EF2342598F45D00B8A1D9 /* JobListViewController.swift */,
+				644EF2392598F8C100B8A1D9 /* JobListViewModel.swift */,
+				644EF24C2598FCC400B8A1D9 /* JobListProvider */,
+			);
+			path = "Job List";
+			sourceTree = "<group>";
+		};
+		644EF23E2598F92100B8A1D9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				644EF23F2598F92D00B8A1D9 /* Job.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		644EF24C2598FCC400B8A1D9 /* JobListProvider */ = {
+			isa = PBXGroup;
+			children = (
+				644EF2472598FC7300B8A1D9 /* JobListProvider.swift */,
+				644EF24D2598FCDF00B8A1D9 /* GitHubJobListService.swift */,
+			);
+			path = JobListProvider;
+			sourceTree = "<group>";
+		};
+		644EF2522598FD9C00B8A1D9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				644EF25C2598FEE400B8A1D9 /* JHError.swift */,
+				644EF264259902C700B8A1D9 /* Extensions */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		644EF264259902C700B8A1D9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				644EF265259902D400B8A1D9 /* Date+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		6471249C25984E9500B8D38E = {
 			isa = PBXGroup;
 			children = (
 				647124A725984E9500B8D38E /* Job Hub */,
+				644EF23E2598F92100B8A1D9 /* Models */,
 				644EF1E92598E34100B8A1D9 /* Networking */,
+				644EF2522598FD9C00B8A1D9 /* Common */,
 				6471250225985FB000B8D38E /* Assets */,
 				647124C125984E9800B8D38E /* Job HubTests */,
 				647124CC25984E9800B8D38E /* Job HubUITests */,
@@ -185,8 +243,8 @@
 		647124A725984E9500B8D38E /* Job Hub */ = {
 			isa = PBXGroup;
 			children = (
+				644EF2332598F44E00B8A1D9 /* Job List */,
 				647124A825984E9500B8D38E /* AppDelegate.swift */,
-				647124AC25984E9500B8D38E /* ViewController.swift */,
 				64712503259860E700B8D38E /* R.generated.swift */,
 				647124AE25984E9500B8D38E /* Main.storyboard */,
 				647124B625984E9800B8D38E /* LaunchScreen.storyboard */,
@@ -532,19 +590,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644EF23A2598F8C100B8A1D9 /* JobListViewModel.swift in Sources */,
+				644EF25D2598FEE400B8A1D9 /* JHError.swift in Sources */,
 				644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */,
-				647124AD25984E9500B8D38E /* ViewController.swift in Sources */,
+				644EF2482598FC7300B8A1D9 /* JobListProvider.swift in Sources */,
 				647125882598BD4500B8D38E /* ThemeService.swift in Sources */,
 				644EF2102598E54500B8A1D9 /* RequestParameter.swift in Sources */,
 				6471254425988F9600B8D38E /* UIColor+Extensions.swift in Sources */,
 				644EF1FB2598E3DC00B8A1D9 /* GitHubJobsAPI.swift in Sources */,
+				644EF24E2598FCDF00B8A1D9 /* GitHubJobListService.swift in Sources */,
+				644EF266259902D400B8A1D9 /* Date+Extensions.swift in Sources */,
 				644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */,
 				644EF2182598E5D800B8A1D9 /* GetJobListResponse.swift in Sources */,
+				644EF2352598F45D00B8A1D9 /* JobListViewController.swift in Sources */,
 				647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */,
 				647124A925984E9500B8D38E /* AppDelegate.swift in Sources */,
 				647125802598BCDA00B8D38E /* PrimaryTheme.swift in Sources */,
 				647125772598B96500B8D38E /* Theme.swift in Sources */,
 				64712504259860E700B8D38E /* R.generated.swift in Sources */,
+				644EF2402598F92D00B8A1D9 /* Job.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,7 +793,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.luisligunas.jobhub;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luisligunas.willyweather.jobhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -751,7 +816,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.luisligunas.jobhub;
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.luisligunas.willyweather.jobhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		ThemeService.setTheme(.primary)
 		
-		let navigationController = UINavigationController(rootViewController: UIViewController())
+		let navigationController = UINavigationController(rootViewController: JobListViewController())
 		navigationController.setNavigationBarHidden(true, animated: true)
 		
 		window = UIWindow(frame: UIScreen.main.bounds)
