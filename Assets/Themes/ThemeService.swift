@@ -15,7 +15,12 @@ class ThemeService {
 	private init() {}
 	
 	static func setTheme(_ themeType: ThemeType) {
-		ThemeService.theme = themeType.theme
+		let theme = themeType.theme
+		ThemeService.theme = theme
+		
+		UIRefreshControl.appearance().tintColor = theme.tintColor
+		UIActivityIndicatorView.appearance().tintColor = theme.tintColor
+		UIActivityIndicatorView.appearance().style = theme.activityIndicatorViewStyle
 	}
 }
 

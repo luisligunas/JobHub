@@ -13,19 +13,28 @@ class JobListViewController: UIViewController {
 	
 	private let viewModel = JobListViewModel()
 	
+	private var tableViewIsBeingPulledUp = false
+	private var isPullingData = false
+	
 	private let tableView: UITableView = {
 		let tableView = UITableView()
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .clear
 		tableView.showsVerticalScrollIndicator = true
-		tableView.allowsSelection = false
 		tableView.keyboardDismissMode = .onDrag
-		tableView.bounces = false
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.estimatedRowHeight = 44
 		
 		return tableView
+	}()
+	
+	private let topRefreshControl = UIRefreshControl()
+	
+	private let bottomSpinnerView: UIActivityIndicatorView = {
+		let spinner = UIActivityIndicatorView(style: ThemeService.theme.activityIndicatorViewStyle)
+		spinner.hidesWhenStopped = true
+		return spinner
 	}()
 	
 	init() {
@@ -55,16 +64,34 @@ class JobListViewController: UIViewController {
 		}
 		tableView.dataSource = self
 		tableView.delegate = self
+		tableView.prefetchDataSource = self
+		
+		tableView.refreshControl = topRefreshControl // Loader on top
+		topRefreshControl.addTarget(self, action: #selector(onPullDown), for: .valueChanged)
+		tableView.tableFooterView = bottomSpinnerView // Loader at bottom
 		
 		pullDataFromTop()
 	}
 	
+	@objc private func onPullDown() {
+		pullDataFromTop()
+	}
+	
 	private func pullDataFromTop() {
+		guard !isPullingData else { return }
+		isPullingData = true
+		
+		topRefreshControl.beginRefreshing()
 		viewModel.loadFirstPage { [weak self] result in
+			guard let self = self else { return }
+			self.isPullingData = false
+			self.topRefreshControl.endRefreshing()
+			
 			switch result {
-			case .success:
+			case .success(let jobs):
+				guard !jobs.isEmpty else { return }
 				DispatchQueue.main.async {
-					self?.tableView.reloadData()
+					self.tableView.reloadData()
 				}
 			case .failure: break
 			}
@@ -72,11 +99,20 @@ class JobListViewController: UIViewController {
 	}
 	
 	private func pullDataFromBottom() {
+		guard !isPullingData else { return }
+		isPullingData = true
+		
+		bottomSpinnerView.startAnimating()
 		viewModel.loadNextPage { [weak self] result in
+			guard let self = self else { return }
+			self.isPullingData = false
+			self.bottomSpinnerView.stopAnimating()
+			
 			switch result {
-			case .success:
+			case .success(let jobs):
+				guard !jobs.isEmpty else { return }
 				DispatchQueue.main.async {
-					self?.tableView.reloadData()
+					self.tableView.reloadData()
 				}
 			case .failure: break
 			}
@@ -102,7 +138,24 @@ extension JobListViewController: UITableViewDataSource {
 	}
 }
 
+extension JobListViewController: UITableViewDataSourcePrefetching {
+	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+		guard let maxSection = indexPaths.map({ $0.section }).max(),
+			  maxSection >= viewModel.jobs.count - 1
+		else { return }
+		
+		pullDataFromBottom()
+	}
+}
+
 extension JobListViewController: UITableViewDelegate {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let job = viewModel.jobs[indexPath.section]
+		print("Selected cell: \(job.title)")
+	}
+	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
 		return 10
 	}
@@ -121,5 +174,18 @@ extension JobListViewController: UITableViewDelegate {
 		let view = UIView()
 		view.backgroundColor = .clear
 		return view
+	}
+}
+
+extension JobListViewController: UIScrollViewDelegate {
+	func scrollViewDidScroll(_ scrollView: UIScrollView) {
+		if scrollView.contentOffset.y + scrollView.frame.size.height + bottomSpinnerView.frame.height >= scrollView.contentSize.height {
+			if !tableViewIsBeingPulledUp {
+				pullDataFromBottom()
+			}
+			tableViewIsBeingPulledUp = true
+		} else {
+			tableViewIsBeingPulledUp = false
+		}
 	}
 }

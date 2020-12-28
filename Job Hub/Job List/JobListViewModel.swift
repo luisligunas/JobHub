@@ -19,29 +19,22 @@ class JobListViewModel {
 	}
 	
 	func loadFirstPage(completion: @escaping (Result<[Job], Error>) -> Void) {
-		let page = 1
-		jobListProvider.getJobList(page: page) { [weak self] result in
-			guard let self = self else { return }
-			
-			switch result {
-			case .success(let jobs):
-				self.jobListPage = max(page + 1, self.jobListPage)
-				self.addJobs(jobs)
-				completion(.success(jobs))
-			case .failure(let error):
-				completion(.failure(error))
-			}
-		}
+		loadPage(page: 1, completion: completion)
 	}
 	
 	func loadNextPage(completion: @escaping (Result<[Job], Error>) -> Void) {
-		let page = jobListPage
+		loadPage(page: jobListPage, completion: completion)
+	}
+	
+	private func loadPage(page: Int, completion: @escaping (Result<[Job], Error>) -> Void) {
 		jobListProvider.getJobList(page: page) { [weak self] result in
 			guard let self = self else { return }
 			
 			switch result {
 			case .success(let jobs):
-				self.jobListPage = max(page + 1, self.jobListPage)
+				if !jobs.isEmpty {
+					self.jobListPage = max(page + 1, self.jobListPage)
+				}
 				self.addJobs(jobs)
 				completion(.success(jobs))
 			case .failure(let error):
