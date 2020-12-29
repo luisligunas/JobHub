@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-protocol JobDetailsProvider {
+protocol JobDetailsProvider: CompanyImageProvider {
 	func getJobDetails(completion: @escaping (Result<Job, Error>) -> Void)
-	func getCompanyImage(completion: @escaping (Result<UIImage, Error>) -> Void)
 }

@@ -98,7 +98,7 @@ extension JobDetailsViewController: UITableViewDataSource {
 			cell.companyName = job.company
 			cell.location = job.location
 			cell.publishDate = Date.date(from: job.createdAt, withDateFormat: .expandedUTC) ?? .init()
-			viewModel.getImage { result in
+			viewModel.getCompanyImage { result in
 				switch result {
 				case .success(let image):
 					DispatchQueue.main.async {

@@ -20,6 +20,8 @@
 		641DF20F259B7B0600DC29B3 /* TextThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF20E259B7B0600DC29B3 /* TextThemeType.swift */; };
 		641DF217259B7C6A00DC29B3 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF216259B7C6A00DC29B3 /* UILabel+Extensions.swift */; };
 		641DF21C259B7D7C00DC29B3 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF21B259B7D7C00DC29B3 /* UITextView+Extensions.swift */; };
+		641DF238259BA12900DC29B3 /* CompanyImageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF237259BA12900DC29B3 /* CompanyImageProvider.swift */; };
+		641DF240259BA4F400DC29B3 /* KingFisherImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF23F259BA4F400DC29B3 /* KingFisherImageService.swift */; };
 		644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1EA2598E35800B8A1D9 /* APIManager.swift */; };
 		644EF1FB2598E3DC00B8A1D9 /* GitHubJobsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */; };
 		644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */; };
@@ -93,6 +95,8 @@
 		641DF20E259B7B0600DC29B3 /* TextThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextThemeType.swift; sourceTree = "<group>"; };
 		641DF216259B7C6A00DC29B3 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		641DF21B259B7D7C00DC29B3 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
+		641DF237259BA12900DC29B3 /* CompanyImageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyImageProvider.swift; sourceTree = "<group>"; };
+		641DF23F259BA4F400DC29B3 /* KingFisherImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherImageService.swift; sourceTree = "<group>"; };
 		644EF1EA2598E35800B8A1D9 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubJobsAPI.swift; sourceTree = "<group>"; };
 		644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJobListOptions.swift; sourceTree = "<group>"; };
@@ -200,6 +204,25 @@
 			path = TextTheme;
 			sourceTree = "<group>";
 		};
+		641DF235259BA0B900DC29B3 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				641DF236259BA11A00DC29B3 /* CompanyImageProvider */,
+				64514C462599EB1800641A6C /* JobDetailsProvider */,
+				644EF24C2598FCC400B8A1D9 /* JobListProvider */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		641DF236259BA11A00DC29B3 /* CompanyImageProvider */ = {
+			isa = PBXGroup;
+			children = (
+				641DF237259BA12900DC29B3 /* CompanyImageProvider.swift */,
+				641DF23F259BA4F400DC29B3 /* KingFisherImageService.swift */,
+			);
+			path = CompanyImageProvider;
+			sourceTree = "<group>";
+		};
 		644EF1E92598E34100B8A1D9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,7 +258,6 @@
 				644EF2342598F45D00B8A1D9 /* JobListViewController.swift */,
 				641DF1CB259B5C4900DC29B3 /* JobListTableViewCell.swift */,
 				644EF2392598F8C100B8A1D9 /* JobListViewModel.swift */,
-				644EF24C2598FCC400B8A1D9 /* JobListProvider */,
 			);
 			path = "Job List";
 			sourceTree = "<group>";
@@ -287,7 +309,6 @@
 				64514C662599FCDE00641A6C /* JobDetailsSectionItem.swift */,
 				64514C512599F90400641A6C /* JobDetailsTableViewCells */,
 				64514C412599EAF000641A6C /* JobDetailsViewModel.swift */,
-				64514C462599EB1800641A6C /* JobDetailsProvider */,
 			);
 			path = "Job Details";
 			sourceTree = "<group>";
@@ -327,6 +348,7 @@
 			isa = PBXGroup;
 			children = (
 				647124A725984E9500B8D38E /* Job Hub */,
+				641DF235259BA0B900DC29B3 /* Providers */,
 				644EF23E2598F92100B8A1D9 /* Models */,
 				644EF1E92598E34100B8A1D9 /* Networking */,
 				644EF2522598FD9C00B8A1D9 /* Common */,
@@ -718,7 +740,9 @@
 				644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */,
 				64514C582599FA1200641A6C /* JobDetailsJobDescriptionTableViewCell.swift in Sources */,
 				641DF1E8259B743400DC29B3 /* TextColorTheme.swift in Sources */,
+				641DF238259BA12900DC29B3 /* CompanyImageProvider.swift in Sources */,
 				644EF2482598FC7300B8A1D9 /* JobListProvider.swift in Sources */,
+				641DF240259BA4F400DC29B3 /* KingFisherImageService.swift in Sources */,
 				641DF21C259B7D7C00DC29B3 /* UITextView+Extensions.swift in Sources */,
 				647125882598BD4500B8D38E /* ThemeService.swift in Sources */,
 				64514C672599FCDE00641A6C /* JobDetailsSectionItem.swift in Sources */,
@@ -923,6 +947,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P9VM94332G;
 				INFOPLIST_FILE = "Job Hub/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -946,6 +971,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = P9VM94332G;
 				INFOPLIST_FILE = "Job Hub/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

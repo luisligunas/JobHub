@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Kingfisher
 import SnapKit
 import UIKit
 
@@ -143,15 +142,12 @@ extension JobListViewController: UITableViewDataSource {
 		cell.publishDate = Date.date(from: job.createdAt, withDateFormat: .expandedUTC) ?? .init()
 		
 		cell.companyImage = nil
-		if let companyLogoURLString = job.companyLogo,
-		   let companyLogoURL = URL(string: companyLogoURLString) {
-			KingfisherManager.shared.retrieveImage(with: companyLogoURL) { result in
-				switch result {
-				case .success(let imageResult):
-					cell.companyImage = imageResult.image
-				case .failure:
-					break
-				}
+		viewModel.getCompanyImage(job: job) { result in
+			switch result {
+			case .success(let image):
+				cell.companyImage = image
+			case .failure:
+				break
 			}
 		}
 		
@@ -161,6 +157,11 @@ extension JobListViewController: UITableViewDataSource {
 
 extension JobListViewController: UITableViewDataSourcePrefetching {
 	func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
+		indexPaths.forEach { indexPath in
+			let job = viewModel.jobs[indexPath.section]
+			viewModel.cacheCompanyImage(job: job) { _ in }
+		}
+		
 		guard let maxSection = indexPaths.map({ $0.section }).max(),
 			  maxSection >= viewModel.jobs.count - 1
 		else { return }

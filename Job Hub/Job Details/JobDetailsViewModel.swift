@@ -36,13 +36,18 @@ class JobDetailsViewModel {
 		}
 	}
 	
-	func getImage(completion: @escaping (Result<UIImage, Error>) -> Void) {
+	func getCompanyImage(completion: @escaping (Result<UIImage, Error>) -> Void) {
 		if let companyImage = companyImage {
 			completion(.success(companyImage))
 			return
 		}
 		
-		jobDetailsProvider.getCompanyImage { [weak self] result in
+		guard let job = job else {
+			completion(.failure(JHError.general))
+			return
+		}
+		
+		jobDetailsProvider.getCompanyImage(job: job) { [weak self] result in
 			guard let self = self else { return }
 			switch result {
 			case .success(let image):
