@@ -12,11 +12,8 @@ protocol Theme {
 	var backgroundColor: UIColor { get }
 	var tintColor: UIColor { get }
 	
-	var headerFont: UIFont? { get }
-	var headerTextColor: UIColor { get }
-	
-	var bodyTextFont: UIFont? { get }
-	var bodyTextColor: UIColor { get }
+	var textColorTheme: TextColorTheme { get }
+	var textFontTheme: TextFontTheme { get }
 	
 	var navigationBarTintColor: UIColor { get }
 	var navigationBarTitleTextAttributes: [NSAttributedString.Key : Any] { get }
@@ -31,11 +28,8 @@ extension Theme {
 	var backgroundColor: UIColor { .primaryColor }
 	var tintColor: UIColor { .white }
 	
-	var headerFont: UIFont? { R.font.robotoBold(size: 24) }
-	var headerTextColor: UIColor { .primaryColor }
-	
-	var bodyTextFont: UIFont? { R.font.robotoRegular(size: 16) }
-	var bodyTextColor: UIColor { .primaryColor  }
+	var textColorTheme: TextColorTheme { DefaultTextColorTheme() }
+	var textFontTheme: TextFontTheme { DefaultTextFontTheme() }
 	
 	var navigationBarTintColor: UIColor { .primaryColor }
 	var navigationBarTitleTextAttributes: [NSAttributedString.Key : Any] { [.foregroundColor: UIColor.tertiaryColor] }
@@ -45,3 +39,5 @@ extension Theme {
 	var preferredStatusBarStyle: UIStatusBarStyle { .lightContent }
 	var activityIndicatorViewStyle: UIActivityIndicatorView.Style { .white }
 }
+
+struct DefaultTheme: Theme {}

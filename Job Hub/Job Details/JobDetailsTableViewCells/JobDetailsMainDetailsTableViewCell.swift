@@ -22,8 +22,7 @@ class JobDetailsMainDetailsTableViewCell: UITableViewCell {
 	
 	private let jobTitleLabel: UILabel = {
 		let label = UILabel()
-		label.font = ThemeService.theme.headerFont
-		label.textColor = ThemeService.theme.headerTextColor
+		label.setTextThemeType(.title2)
 		label.numberOfLines = 0
 		return label
 	}()
@@ -38,17 +37,20 @@ class JobDetailsMainDetailsTableViewCell: UITableViewCell {
 		let label = UILabel()
 		label.numberOfLines = 2
 		label.adjustsFontSizeToFitWidth = true
+		label.setTextThemeType(.body)
 		return label
 	}()
 	
 	private let locationLabel: UILabel = {
 		let label = UILabel()
 		label.numberOfLines = 0
+		label.setTextThemeType(.footnote)
 		return label
 	}()
 	
 	private let publishDateLabel: UILabel = {
 		let label = UILabel()
+		label.setTextThemeType(.caption1)
 		return label
 	}()
 	
@@ -63,17 +65,14 @@ class JobDetailsMainDetailsTableViewCell: UITableViewCell {
 	}
 	
 	private func setupUI() {
-		backgroundColor = .clear
+		backgroundColor = .white
+		layer.cornerRadius = 5
+		layer.shadowColor = UIColor.white.cgColor
+		layer.shadowRadius = 2
+		layer.shadowOffset = .init(width: -2, height: 2)
+		layer.shadowOpacity = 0.2
 		
-		let wrapperView = JHTableViewCellWrapperView()
-		contentView.addSubview(wrapperView)
-		wrapperView.snp.makeConstraints { make in
-			make.top.bottom.equalToSuperview()
-			make.leading.equalToSuperview().offset(10)
-			make.trailing.equalToSuperview().offset(-10)
-		}
-		
-		wrapperView.addSubview(jobTitleLabel)
+		contentView.addSubview(jobTitleLabel)
 		jobTitleLabel.snp.makeConstraints { make in
 			make.top.equalToSuperview().offset(15)
 			make.leading.equalToSuperview().offset(20)
@@ -81,7 +80,7 @@ class JobDetailsMainDetailsTableViewCell: UITableViewCell {
 		}
 		
 		let companyWrapperView = UIView()
-		wrapperView.addSubview(companyWrapperView)
+		contentView.addSubview(companyWrapperView)
 		companyWrapperView.snp.makeConstraints { make in
 			make.top.equalTo(jobTitleLabel.snp.bottom).offset(10)
 			make.leading.equalTo(jobTitleLabel)
@@ -108,7 +107,7 @@ class JobDetailsMainDetailsTableViewCell: UITableViewCell {
 			make.trailing.lessThanOrEqualToSuperview()
 		}
 		
-		wrapperView.addSubview(publishDateLabel)
+		contentView.addSubview(publishDateLabel)
 		publishDateLabel.snp.makeConstraints { make in
 			make.top.equalTo(companyWrapperView.snp.bottom).offset(10)
 			make.bottom.equalToSuperview().offset(-15)

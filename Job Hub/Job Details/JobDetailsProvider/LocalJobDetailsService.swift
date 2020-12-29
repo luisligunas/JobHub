@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Kingfisher
 import UIKit
 
 struct LocalJobDetailsService: JobDetailsProvider {
@@ -21,16 +22,18 @@ struct LocalJobDetailsService: JobDetailsProvider {
 	}
 	
 	func getCompanyImage(completion: @escaping (Result<UIImage, Error>) -> Void) {
-		guard let companyURL = job.companyLogo else {
+		guard let companyURLString = job.companyLogo,
+			  let companyURL = URL(string: companyURLString) else {
 			completion(.failure(JHError.general))
 			return
 		}
-		UIImage.download(from: companyURL) { image in
-			guard let image = image else {
-				completion(.failure(JHError.general))
-				return
+		KingfisherManager.shared.retrieveImage(with: companyURL) { result in
+			switch result {
+			case .success(let imageResult):
+				completion(.success(imageResult.image))
+			case .failure(let error):
+				completion(.failure(error))
 			}
-			completion(.success(image))
 		}
 	}
 }

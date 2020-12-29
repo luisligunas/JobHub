@@ -13,8 +13,13 @@
 		641DF19B259AFB0500DC29B3 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 641DF19A259AFB0500DC29B3 /* Localizable.strings */; };
 		641DF1A0259B000500DC29B3 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF19F259B000500DC29B3 /* String+Extensions.swift */; };
 		641DF1A5259B00B700DC29B3 /* NSAttributedString+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF1A4259B00B700DC29B3 /* NSAttributedString+Extensions.swift */; };
-		641DF1AA259B388200DC29B3 /* JHTableViewCellWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF1A9259B388200DC29B3 /* JHTableViewCellWrapperView.swift */; };
 		641DF1B7259B4DEA00DC29B3 /* JobListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF1B6259B4DE900DC29B3 /* JobListNavigationController.swift */; };
+		641DF1CC259B5C4900DC29B3 /* JobListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF1CB259B5C4900DC29B3 /* JobListTableViewCell.swift */; };
+		641DF1E3259B742900DC29B3 /* TextFontTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF1E2259B742900DC29B3 /* TextFontTheme.swift */; };
+		641DF1E8259B743400DC29B3 /* TextColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF1E7259B743400DC29B3 /* TextColorTheme.swift */; };
+		641DF20F259B7B0600DC29B3 /* TextThemeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF20E259B7B0600DC29B3 /* TextThemeType.swift */; };
+		641DF217259B7C6A00DC29B3 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF216259B7C6A00DC29B3 /* UILabel+Extensions.swift */; };
+		641DF21C259B7D7C00DC29B3 /* UITextView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF21B259B7D7C00DC29B3 /* UITextView+Extensions.swift */; };
 		644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1EA2598E35800B8A1D9 /* APIManager.swift */; };
 		644EF1FB2598E3DC00B8A1D9 /* GitHubJobsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */; };
 		644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */; };
@@ -54,7 +59,6 @@
 		6471253C2598882B00B8D38E /* Glegoo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 647125392598882B00B8D38E /* Glegoo-Bold.ttf */; };
 		6471254425988F9600B8D38E /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471254325988F9600B8D38E /* UIColor+Extensions.swift */; };
 		647125772598B96500B8D38E /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647125762598B96500B8D38E /* Theme.swift */; };
-		647125802598BCDA00B8D38E /* DefaultTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6471257F2598BCDA00B8D38E /* DefaultTheme.swift */; };
 		647125882598BD4500B8D38E /* ThemeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647125872598BD4500B8D38E /* ThemeService.swift */; };
 		951BA35B82DB27EA93172CF2 /* Pods_Job_HubTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB83F4037D48030AE25D4813 /* Pods_Job_HubTests.framework */; };
 /* End PBXBuildFile section */
@@ -82,8 +86,13 @@
 		641DF19A259AFB0500DC29B3 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		641DF19F259B000500DC29B3 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		641DF1A4259B00B700DC29B3 /* NSAttributedString+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Extensions.swift"; sourceTree = "<group>"; };
-		641DF1A9259B388200DC29B3 /* JHTableViewCellWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JHTableViewCellWrapperView.swift; sourceTree = "<group>"; };
 		641DF1B6259B4DE900DC29B3 /* JobListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListNavigationController.swift; sourceTree = "<group>"; };
+		641DF1CB259B5C4900DC29B3 /* JobListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListTableViewCell.swift; sourceTree = "<group>"; };
+		641DF1E2259B742900DC29B3 /* TextFontTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFontTheme.swift; sourceTree = "<group>"; };
+		641DF1E7259B743400DC29B3 /* TextColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextColorTheme.swift; sourceTree = "<group>"; };
+		641DF20E259B7B0600DC29B3 /* TextThemeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextThemeType.swift; sourceTree = "<group>"; };
+		641DF216259B7C6A00DC29B3 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
+		641DF21B259B7D7C00DC29B3 /* UITextView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Extensions.swift"; sourceTree = "<group>"; };
 		644EF1EA2598E35800B8A1D9 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubJobsAPI.swift; sourceTree = "<group>"; };
 		644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJobListOptions.swift; sourceTree = "<group>"; };
@@ -129,7 +138,6 @@
 		647125392598882B00B8D38E /* Glegoo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Glegoo-Bold.ttf"; sourceTree = "<group>"; };
 		6471254325988F9600B8D38E /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		647125762598B96500B8D38E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		6471257F2598BCDA00B8D38E /* DefaultTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTheme.swift; sourceTree = "<group>"; };
 		647125872598BD4500B8D38E /* ThemeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeService.swift; sourceTree = "<group>"; };
 		695EB3D3C2C525508127300C /* Pods-Job Hub-Job HubUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Job Hub-Job HubUITests.debug.xcconfig"; path = "Target Support Files/Pods-Job Hub-Job HubUITests/Pods-Job Hub-Job HubUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		79800A8454D1E1EF04C023C5 /* Pods_Job_Hub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Job_Hub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -182,6 +190,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		641DF20D259B7AEE00DC29B3 /* TextTheme */ = {
+			isa = PBXGroup;
+			children = (
+				641DF1E7259B743400DC29B3 /* TextColorTheme.swift */,
+				641DF1E2259B742900DC29B3 /* TextFontTheme.swift */,
+				641DF20E259B7B0600DC29B3 /* TextThemeType.swift */,
+			);
+			path = TextTheme;
+			sourceTree = "<group>";
+		};
 		644EF1E92598E34100B8A1D9 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +233,7 @@
 			children = (
 				641DF1B6259B4DE900DC29B3 /* JobListNavigationController.swift */,
 				644EF2342598F45D00B8A1D9 /* JobListViewController.swift */,
+				641DF1CB259B5C4900DC29B3 /* JobListTableViewCell.swift */,
 				644EF2392598F8C100B8A1D9 /* JobListViewModel.swift */,
 				644EF24C2598FCC400B8A1D9 /* JobListProvider */,
 			);
@@ -243,7 +262,6 @@
 			children = (
 				644EF25C2598FEE400B8A1D9 /* JHError.swift */,
 				644EF264259902C700B8A1D9 /* Extensions */,
-				641DF1A9259B388200DC29B3 /* JHTableViewCellWrapperView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -252,10 +270,12 @@
 			isa = PBXGroup;
 			children = (
 				644EF265259902D400B8A1D9 /* Date+Extensions.swift */,
-				64514C612599FC1500641A6C /* UIView+Extensions.swift */,
-				64514C6E259A688800641A6C /* UIImage+Extensions.swift */,
-				641DF19F259B000500DC29B3 /* String+Extensions.swift */,
 				641DF1A4259B00B700DC29B3 /* NSAttributedString+Extensions.swift */,
+				641DF19F259B000500DC29B3 /* String+Extensions.swift */,
+				64514C6E259A688800641A6C /* UIImage+Extensions.swift */,
+				641DF216259B7C6A00DC29B3 /* UILabel+Extensions.swift */,
+				641DF21B259B7D7C00DC29B3 /* UITextView+Extensions.swift */,
+				64514C612599FC1500641A6C /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -406,7 +426,7 @@
 			children = (
 				647125762598B96500B8D38E /* Theme.swift */,
 				647125872598BD4500B8D38E /* ThemeService.swift */,
-				6471257F2598BCDA00B8D38E /* DefaultTheme.swift */,
+				641DF20D259B7AEE00DC29B3 /* TextTheme */,
 			);
 			path = Themes;
 			sourceTree = "<group>";
@@ -689,13 +709,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				64514C6F259A688800641A6C /* UIImage+Extensions.swift in Sources */,
+				641DF1E3259B742900DC29B3 /* TextFontTheme.swift in Sources */,
+				641DF1CC259B5C4900DC29B3 /* JobListTableViewCell.swift in Sources */,
 				644EF23A2598F8C100B8A1D9 /* JobListViewModel.swift in Sources */,
 				641DF1A5259B00B700DC29B3 /* NSAttributedString+Extensions.swift in Sources */,
 				644EF25D2598FEE400B8A1D9 /* JHError.swift in Sources */,
 				64514C532599F9C900641A6C /* JobDetailsMainDetailsTableViewCell.swift in Sources */,
 				644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */,
 				64514C582599FA1200641A6C /* JobDetailsJobDescriptionTableViewCell.swift in Sources */,
+				641DF1E8259B743400DC29B3 /* TextColorTheme.swift in Sources */,
 				644EF2482598FC7300B8A1D9 /* JobListProvider.swift in Sources */,
+				641DF21C259B7D7C00DC29B3 /* UITextView+Extensions.swift in Sources */,
 				647125882598BD4500B8D38E /* ThemeService.swift in Sources */,
 				64514C672599FCDE00641A6C /* JobDetailsSectionItem.swift in Sources */,
 				644EF2102598E54500B8A1D9 /* RequestParameter.swift in Sources */,
@@ -705,6 +729,7 @@
 				644EF24E2598FCDF00B8A1D9 /* GitHubJobListService.swift in Sources */,
 				64514C482599EB2900641A6C /* JobDetailsProvider.swift in Sources */,
 				64514C622599FC1500641A6C /* UIView+Extensions.swift in Sources */,
+				641DF20F259B7B0600DC29B3 /* TextThemeType.swift in Sources */,
 				64514C3D2599EA4B00641A6C /* JobDetailsViewController.swift in Sources */,
 				644EF266259902D400B8A1D9 /* Date+Extensions.swift in Sources */,
 				644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */,
@@ -712,9 +737,8 @@
 				644EF2352598F45D00B8A1D9 /* JobListViewController.swift in Sources */,
 				64514C5D2599FA1F00641A6C /* JobDetailsHowToApplyTableViewCell.swift in Sources */,
 				647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */,
-				641DF1AA259B388200DC29B3 /* JHTableViewCellWrapperView.swift in Sources */,
+				641DF217259B7C6A00DC29B3 /* UILabel+Extensions.swift in Sources */,
 				647124A925984E9500B8D38E /* AppDelegate.swift in Sources */,
-				647125802598BCDA00B8D38E /* DefaultTheme.swift in Sources */,
 				647125772598B96500B8D38E /* Theme.swift in Sources */,
 				64712504259860E700B8D38E /* R.generated.swift in Sources */,
 				644EF2402598F92D00B8A1D9 /* Job.swift in Sources */,

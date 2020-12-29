@@ -23,7 +23,7 @@ class JobDetailsViewController: UIViewController {
 		tableView.translatesAutoresizingMaskIntoConstraints = false
 		tableView.separatorStyle = .none
 		tableView.backgroundColor = .clear
-		tableView.showsVerticalScrollIndicator = true
+		tableView.showsVerticalScrollIndicator = false
 		tableView.keyboardDismissMode = .onDrag
 		tableView.allowsSelection = false
 		tableView.rowHeight = UITableView.automaticDimension
@@ -56,7 +56,8 @@ class JobDetailsViewController: UIViewController {
 			make.top.equalTo(safeArea.snp.top)
 			make.bottom.equalTo(safeArea.snp.bottom)
 			
-			make.leading.trailing.equalToSuperview()
+			make.leading.equalToSuperview().offset(15)
+			make.trailing.equalToSuperview().offset(-15)
 		}
 		tableView.delegate = self
 		tableView.dataSource = self

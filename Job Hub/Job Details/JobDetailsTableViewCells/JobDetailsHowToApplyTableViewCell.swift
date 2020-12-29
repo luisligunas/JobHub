@@ -15,13 +15,13 @@ class JobDetailsHowToApplyTableViewCell: UITableViewCell {
 	private let howToApplyTitleLabel: UILabel = {
 		let label = UILabel()
 		label.text = R.string.localizable.jobDetailsHowToApply()
-		label.font = ThemeService.theme.headerFont
+		label.setTextThemeType(.title3)
 		return label
 	}()
 	
 	private let howToApplyTextView: UITextView = {
 		let textView = UITextView()
-		textView.font = ThemeService.theme.bodyTextFont
+		textView.setTextThemeType(.body)
 		textView.isEditable = false
 		textView.isScrollEnabled = false
 		textView.translatesAutoresizingMaskIntoConstraints = false
@@ -39,25 +39,21 @@ class JobDetailsHowToApplyTableViewCell: UITableViewCell {
 	}
 	
 	private func setupUI() {
-		backgroundColor = .clear
+		backgroundColor = .white
+		layer.cornerRadius = 5
+		layer.shadowColor = UIColor.white.cgColor
+		layer.shadowRadius = 2
+		layer.shadowOffset = .init(width: -2, height: 2)
+		layer.shadowOpacity = 0.2
 		
-		let wrapperView = JHTableViewCellWrapperView()
-		contentView.addSubview(wrapperView)
-		wrapperView.snp.makeConstraints { make in
-			make.top.bottom.equalToSuperview()
-			make.leading.equalToSuperview().offset(10)
-			make.trailing.equalToSuperview().offset(-10)
-		}
-		
-		
-		wrapperView.addSubview(howToApplyTitleLabel)
+		contentView.addSubview(howToApplyTitleLabel)
 		howToApplyTitleLabel.snp.makeConstraints { make in
 			make.top.equalToSuperview().offset(15)
 			make.leading.equalToSuperview().offset(20)
 			make.trailing.equalToSuperview().offset(-20)
 		}
 		
-		wrapperView.addSubview(howToApplyTextView)
+		contentView.addSubview(howToApplyTextView)
 		howToApplyTextView.snp.makeConstraints { make in
 			make.top.equalTo(howToApplyTitleLabel.snp.bottom).offset(10)
 			make.bottom.equalToSuperview()
