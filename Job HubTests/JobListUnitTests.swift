@@ -30,6 +30,7 @@ class JobListUnitTests: XCTestCase {
 		let jobListViewModel = JobListViewModel(jobListProvider: MockJobListProvider(jobs: jobs))
 		let jobArray = Array(jobs[0...4])
 		
+		let semaphore = DispatchSemaphore(value: 0)
 		(0...4).forEach { _ in
 			jobListViewModel.loadFirstPage { result in
 				switch result {
@@ -38,7 +39,9 @@ class JobListUnitTests: XCTestCase {
 				case .failure:
 					XCTFail()
 				}
+				semaphore.signal()
 			}
+			semaphore.wait()
 		}
 		XCTAssertEqual(jobListViewModel.jobs, jobArray)
 	}
@@ -46,6 +49,7 @@ class JobListUnitTests: XCTestCase {
 	func testLoadingNextJobListPageShouldBeCorrect() {
 		let jobListViewModel = JobListViewModel(jobListProvider: MockJobListProvider(jobs: jobs))
 		
+		let semaphore = DispatchSemaphore(value: 0)
 		(0...3).forEach { i in
 			let leftIndex = i * 5
 			let rightIndex = leftIndex + 4
@@ -57,7 +61,9 @@ class JobListUnitTests: XCTestCase {
 					return
 				}
 				XCTAssertEqual(jobs, jobArray)
+				semaphore.signal()
 			}
+			semaphore.wait()
 		}
 		
 		(0...1).forEach { _ in
@@ -67,7 +73,9 @@ class JobListUnitTests: XCTestCase {
 					return
 				}
 				XCTAssertEqual(jobs, [])
+				semaphore.signal()
 			}
+			semaphore.wait()
 		}
 		XCTAssertEqual(jobListViewModel.jobs, jobs)
 	}
