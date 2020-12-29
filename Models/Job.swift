@@ -11,7 +11,8 @@ struct Job {
 	let id: String
 	let jobType: JobType
 	let url: String
-	let createdAt, company: String
+	let createdAt: Date
+	let company: String
 	let companyURL: String?
 	let location, title, description, howToApply: String
 	let companyLogo: String?
@@ -21,4 +22,10 @@ enum JobType {
 	case contract
 	case fullTime
 	case partTime
+}
+
+extension Job: Equatable {
+	static func ==(lhs: Job, rhs: Job) -> Bool {
+		return lhs.id == rhs.id
+	}
 }

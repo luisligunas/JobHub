@@ -41,7 +41,7 @@ extension GetJobListResponseItem {
 		return .init(id: id,
 					 jobType: type.asJobType,
 					 url: url,
-					 createdAt: createdAt,
+					 createdAt: Date.date(from: createdAt, withDateFormat: .expandedUTC) ?? .init(),
 					 company: company,
 					 companyURL: companyURL,
 					 location: location,
