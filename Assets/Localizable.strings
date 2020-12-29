@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Job Hub
+
+  Created by Luis Ligunas on 12/29/20.
+  
+*/
+
+"jobDetails.howToApply" = "How To Apply";
+"jobDetails.jobDescription" = "Job Description";
+
+"jobList.title" = "Job Hub";
+
+"time.today" = "Today";
+"time.yesterday" = "Yesterday";
+"time.xDaysAgo" = "%d Days ago";
+"time.lastWeek" = "Last Week";
+"time.xWeeksAgo" = "%d Weeks ago";
+"time.lastMonth" = "Last Month";
+"time.xMonthsAgo" = "%d Months ago";
+"time.lastYear" = "Last Year";
+"time.xYearsAgo" = "%d Years ago";

@@ -10,7 +10,7 @@ import UIKit
 
 class ThemeService {
 	
-	private(set) static var theme: Theme = PrimaryTheme()
+	private(set) static var theme: Theme = DefaultTheme()
 	
 	private init() {}
 	
@@ -21,15 +21,20 @@ class ThemeService {
 		UIRefreshControl.appearance().tintColor = theme.tintColor
 		UIActivityIndicatorView.appearance().tintColor = theme.tintColor
 		UIActivityIndicatorView.appearance().style = theme.activityIndicatorViewStyle
+		
+		UINavigationBar.appearance().barTintColor = theme.navigationBarTintColor
+		UINavigationBar.appearance().titleTextAttributes = theme.navigationBarTitleTextAttributes
+		
+		UIBarButtonItem.appearance().tintColor = theme.barButtonItemTintColor
 	}
 }
 
 enum ThemeType {
-	case primary
+	case `default`
 	
 	var theme: Theme {
 		switch self {
-		case .primary: return PrimaryTheme()
+		case .default: return DefaultTheme()
 		}
 	}
 }

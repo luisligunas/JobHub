@@ -24,6 +24,10 @@
 	<array>
 		<string>Glegoo-Bold.ttf</string>
 		<string>Glegoo-Regular.ttf</string>
+		<string>Roboto-Bold.ttf</string>
+		<string>Roboto-Regular.ttf</string>
+		<string>Roboto-Light.ttf</string>
+		<string>Roboto-Thin.ttf</string>
 	</array>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
