@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Kingfisher
 import SnapKit
 import UIKit
 
@@ -25,6 +26,9 @@ class JobListViewController: UIViewController {
 		tableView.keyboardDismissMode = .onDrag
 		tableView.rowHeight = UITableView.automaticDimension
 		tableView.estimatedRowHeight = 44
+		
+		// UITableViewCell registrations
+		tableView.register(JobListTableViewCell.self, forCellReuseIdentifier: JobListTableViewCell.reuseIdentifier)
 		
 		return tableView
 	}()
@@ -58,7 +62,8 @@ class JobListViewController: UIViewController {
 			make.top.equalTo(safeArea.snp.top)
 			make.bottom.equalTo(safeArea.snp.bottom)
 			
-			make.leading.trailing.equalToSuperview()
+			make.leading.equalToSuperview().offset(15)
+			make.trailing.equalToSuperview().offset(-15)
 		}
 		tableView.dataSource = self
 		tableView.delegate = self
@@ -128,10 +133,28 @@ extension JobListViewController: UITableViewDataSource {
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: JobListTableViewCell.reuseIdentifier, for: indexPath) as? JobListTableViewCell else { return .init() }
+		
 		let job = viewModel.jobs[indexPath.section]
 		
-		let cell = UITableViewCell()
-		cell.textLabel?.text = job.title
+		cell.jobTitle = job.title
+		cell.companyName = job.company
+		cell.location = job.location
+		cell.publishDate = Date.date(from: job.createdAt, withDateFormat: .expandedUTC) ?? .init()
+		
+		cell.companyImage = nil
+		if let companyLogoURLString = job.companyLogo,
+		   let companyLogoURL = URL(string: companyLogoURLString) {
+			KingfisherManager.shared.retrieveImage(with: companyLogoURL) { result in
+				switch result {
+				case .success(let imageResult):
+					cell.companyImage = imageResult.image
+				case .failure:
+					break
+				}
+			}
+		}
+		
 		return cell
 	}
 }
