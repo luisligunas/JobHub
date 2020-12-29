@@ -23,3 +23,9 @@ enum JobType {
 	case fullTime
 	case partTime
 }
+
+extension Job: Equatable {
+	static func ==(lhs: Job, rhs: Job) -> Bool {
+		return lhs.id == rhs.id
+	}
+}
