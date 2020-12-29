@@ -47,11 +47,9 @@ class JobListViewController: UIViewController {
 		setupUI()
 	}
 	
-	override var preferredStatusBarStyle: UIStatusBarStyle {
-		ThemeService.theme.preferredStatusBarStyle
-	}
-	
 	private func setupUI() {
+		title = R.string.localizable.jobListTitle()
+		navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 		view.backgroundColor = ThemeService.theme.backgroundColor
 		
 		view.addSubview(tableView)
@@ -153,7 +151,8 @@ extension JobListViewController: UITableViewDelegate {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
 		let job = viewModel.jobs[indexPath.section]
-		print("Selected cell: \(job.title)")
+		let jobDetailsViewController = JobDetailsViewController(job: job)
+		navigationController?.pushViewController(jobDetailsViewController, animated: true)
 	}
 	
 	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

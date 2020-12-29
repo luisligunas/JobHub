@@ -9,10 +9,9 @@ import Foundation
 
 class JobListViewModel {
 	
-	let jobListProvider: JobListProvider
+	private let jobListProvider: JobListProvider
 	private(set) var jobs = [Job]()
 	private var jobListPage: Int = 1
-	
 	
 	init(jobListProvider: JobListProvider = GitHubJobListService()) {
 		self.jobListProvider = jobListProvider
