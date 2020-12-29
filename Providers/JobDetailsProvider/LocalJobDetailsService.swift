@@ -21,7 +21,7 @@ struct LocalJobDetailsService: JobDetailsProvider {
 		completion(.success(job))
 	}
 	
-	func getCompanyImage(completion: @escaping (Result<UIImage, Error>) -> Void) {
+	func getCompanyImage(job: Job, completion: @escaping (Result<UIImage, Error>) -> Void) {
 		guard let companyURLString = job.companyLogo,
 			  let companyURL = URL(string: companyURLString) else {
 			completion(.failure(JHError.general))

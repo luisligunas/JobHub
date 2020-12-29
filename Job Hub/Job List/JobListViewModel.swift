@@ -6,15 +6,19 @@
 //
 
 import Foundation
+import UIKit
 
 class JobListViewModel {
 	
 	private let jobListProvider: JobListProvider
+	private let companyImageProvider: CompanyImageProvider
 	private(set) var jobs = [Job]()
 	private var jobListPage: Int = 1
 	
-	init(jobListProvider: JobListProvider = GitHubJobListService()) {
+	init(jobListProvider: JobListProvider = GitHubJobListService(),
+		 companyImageProvider: CompanyImageProvider = KingFisherImageService()) {
 		self.jobListProvider = jobListProvider
+		self.companyImageProvider = companyImageProvider
 	}
 	
 	func loadFirstPage(completion: @escaping (Result<[Job], Error>) -> Void) {
@@ -42,16 +46,18 @@ class JobListViewModel {
 		}
 	}
 	
+	func getCompanyImage(job: Job, completion: @escaping (Result<UIImage, Error>) -> Void) {
+		companyImageProvider.getCompanyImage(job: job, completion: completion)
+	}
+	
+	func cacheCompanyImage(job: Job, completion: @escaping (Result<UIImage, Error>) -> Void) {
+		companyImageProvider.cacheCompanyImage(job: job, completion: completion)
+	}
+	
 	private func addJobs(_ jobs: [Job]) {
 		self.jobs += jobs.compactMap { job -> Job? in
 			guard !self.jobs.contains(where: { $0.id == job.id }) else { return nil }
 			return job
-		}
-		self.jobs.sort { first, second -> Bool in
-			guard let firstDate = Date.date(from: first.createdAt, withDateFormat: .expandedUTC),
-				  let secondDate = Date.date(from: second.createdAt, withDateFormat: .expandedUTC)
-			else { return false }
-			return firstDate > secondDate
 		}
 	}
 }
