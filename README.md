@@ -3,6 +3,14 @@
 ## Overview
 Job Hub displays a list of jobs from the [GitHub Jobs API](https://jobs.github.com/api). The app runs on iOS 12 and later.
 
+## How to Run
+1. Clone the repository: `git clone https://github.com/luisligunas/JobHub`
+2. Open your terminal and enter the repository folder.
+3. Run `pod install`.
+4. Open `Job Hub.xcworkspace`.
+5. If a device has not yet been selected, select one.
+6. Press the Run button or press Cmd+R.
+
 ## Unit Test-able View Models
 There are currently only two view models used in the app: `JobListViewModel` and `JobDetailsViewModel`. These were designed to take in **non-concrete-typed** (protocol-ed) providers in their constructors. This allows for the easy testing/validation of the behavior of these view models through having the ability to provide different objects that conform to the said protocols.
 
