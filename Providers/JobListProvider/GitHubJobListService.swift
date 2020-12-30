@@ -10,7 +10,7 @@ import Foundation
 struct GitHubJobListService: JobListProvider {
 	
 	func getJobList(page: Int, completion: @escaping (Result<[Job], Error>) -> Void) {
-		API.shared.gitHubJobsRequest(target: .getJobList(options: .init(page: page - 1))) { result in
+		API.shared.gitHubJobsRequest(target: .getJobList(options: .init(page: page))) { result in
 			switch result {
 			case .success(let response):
 				guard let response = try? response.map(GetJobListResponse.self) else {
