@@ -33,19 +33,22 @@ class API: NSObject {
 		provider.request(target) { result in
 			switch result {
 			case .success(let response):
+				#if DEBUG
 				let responseIsSuccessful = response.statusCode >= 200 && response.statusCode <= 299
 				let responseString = (try? response.mapString()) ?? "Error showing response"
-				
 				if responseIsSuccessful {
 					print("✅ SUCCESS - \(responseString)")
 				} else {
 					print("❌ FAILURE - \(responseString)")
 				}
+				#endif
 				
 				onCompletion(.success(response))
 			case .failure(let error):
+				#if DEBUG
 				let errorMessage = error.localizedDescription
 				print("❌ FAILURE - \(errorMessage)")
+				#endif
 				
 				onCompletion(.failure(error))
 			}

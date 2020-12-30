@@ -11,14 +11,18 @@ import UIKit
 class JobListViewModel {
 	
 	private let jobListProvider: JobListProvider
+	private let cachedJobListProvider: CachedJobListProvider?
 	private let companyImageProvider: CompanyImageProvider
+	
 	private(set) var jobs = [Job]()
 	private var jobListPage: Int = 1
 	
 	init(jobListProvider: JobListProvider = GitHubJobListService(),
-		 companyImageProvider: CompanyImageProvider = KingFisherImageService()) {
+		 companyImageProvider: CompanyImageProvider = KingFisherImageService(),
+		 cachedJobListProvider: CachedJobListProvider? = CoreDataCachedJobListService()) {
 		self.jobListProvider = jobListProvider
 		self.companyImageProvider = companyImageProvider
+		self.cachedJobListProvider = cachedJobListProvider
 	}
 	
 	func loadFirstPage(completion: @escaping (Result<[Job], Error>) -> Void) {
@@ -39,9 +43,24 @@ class JobListViewModel {
 					self.jobListPage = max(page + 1, self.jobListPage)
 				}
 				self.addJobs(jobs)
+				self.cachedJobListProvider?.saveJobListToCache(jobs: jobs, completion: nil)
 				completion(.success(jobs))
 			case .failure(let error):
-				completion(.failure(error))
+				guard let cachedJobListProvider = self.cachedJobListProvider else {
+					completion(.failure(error))
+					return
+				}
+				cachedJobListProvider.getCachedJobList { [weak self] result in
+					guard let self = self else { return }
+					
+					switch result {
+					case .success(let jobs):
+						self.addJobs(jobs)
+						completion(.success(jobs))
+					case .failure(let error):
+						completion(.failure(error))
+					}
+				}
 			}
 		}
 	}

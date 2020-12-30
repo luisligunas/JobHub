@@ -24,6 +24,11 @@
 		641DF240259BA4F400DC29B3 /* KingFisherImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF23F259BA4F400DC29B3 /* KingFisherImageService.swift */; };
 		641DF24E259BB30300DC29B3 /* JobListUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF24D259BB30300DC29B3 /* JobListUnitTests.swift */; };
 		641DF25F259BC6C000DC29B3 /* JobDetailsUnitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF25E259BC6C000DC29B3 /* JobDetailsUnitTests.swift */; };
+		641DF285259C1E1400DC29B3 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF284259C1E1400DC29B3 /* CoreDataService.swift */; };
+		641DF28D259C206D00DC29B3 /* CoreDataEntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF28C259C206D00DC29B3 /* CoreDataEntityType.swift */; };
+		641DF2A1259C2F4600DC29B3 /* CoreDataService+CDJob.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF2A0259C2F4500DC29B3 /* CoreDataService+CDJob.swift */; };
+		641DF2A9259C3BEA00DC29B3 /* CoreDataCachedJobListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF2A8259C3BE900DC29B3 /* CoreDataCachedJobListService.swift */; };
+		641DF2AF259C3C7A00DC29B3 /* CachedJobListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641DF2AE259C3C7A00DC29B3 /* CachedJobListProvider.swift */; };
 		644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1EA2598E35800B8A1D9 /* APIManager.swift */; };
 		644EF1FB2598E3DC00B8A1D9 /* GitHubJobsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */; };
 		644EF20B2598E52E00B8A1D9 /* GetJobListOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */; };
@@ -100,6 +105,11 @@
 		641DF23F259BA4F400DC29B3 /* KingFisherImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherImageService.swift; sourceTree = "<group>"; };
 		641DF24D259BB30300DC29B3 /* JobListUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListUnitTests.swift; sourceTree = "<group>"; };
 		641DF25E259BC6C000DC29B3 /* JobDetailsUnitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailsUnitTests.swift; sourceTree = "<group>"; };
+		641DF284259C1E1400DC29B3 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		641DF28C259C206D00DC29B3 /* CoreDataEntityType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataEntityType.swift; sourceTree = "<group>"; };
+		641DF2A0259C2F4500DC29B3 /* CoreDataService+CDJob.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataService+CDJob.swift"; sourceTree = "<group>"; };
+		641DF2A8259C3BE900DC29B3 /* CoreDataCachedJobListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataCachedJobListService.swift; sourceTree = "<group>"; };
+		641DF2AE259C3C7A00DC29B3 /* CachedJobListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedJobListProvider.swift; sourceTree = "<group>"; };
 		644EF1EA2598E35800B8A1D9 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		644EF1FA2598E3DC00B8A1D9 /* GitHubJobsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubJobsAPI.swift; sourceTree = "<group>"; };
 		644EF20A2598E52E00B8A1D9 /* GetJobListOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetJobListOptions.swift; sourceTree = "<group>"; };
@@ -212,6 +222,7 @@
 				641DF236259BA11A00DC29B3 /* CompanyImageProvider */,
 				64514C462599EB1800641A6C /* JobDetailsProvider */,
 				644EF24C2598FCC400B8A1D9 /* JobListProvider */,
+				641DF2AD259C3C4500DC29B3 /* CachedJobListProvider */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -223,6 +234,34 @@
 				641DF23F259BA4F400DC29B3 /* KingFisherImageService.swift */,
 			);
 			path = CompanyImageProvider;
+			sourceTree = "<group>";
+		};
+		641DF278259C191800DC29B3 /* Local Storage */ = {
+			isa = PBXGroup;
+			children = (
+				641DF279259C192B00DC29B3 /* CoreData */,
+			);
+			path = "Local Storage";
+			sourceTree = "<group>";
+		};
+		641DF279259C192B00DC29B3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				641DF284259C1E1400DC29B3 /* CoreDataService.swift */,
+				641DF2A0259C2F4500DC29B3 /* CoreDataService+CDJob.swift */,
+				641DF28C259C206D00DC29B3 /* CoreDataEntityType.swift */,
+				647124B125984E9500B8D38E /* Job_Hub.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		641DF2AD259C3C4500DC29B3 /* CachedJobListProvider */ = {
+			isa = PBXGroup;
+			children = (
+				641DF2AE259C3C7A00DC29B3 /* CachedJobListProvider.swift */,
+				641DF2A8259C3BE900DC29B3 /* CoreDataCachedJobListService.swift */,
+			);
+			path = CachedJobListProvider;
 			sourceTree = "<group>";
 		};
 		644EF1E92598E34100B8A1D9 /* Networking */ = {
@@ -353,6 +392,7 @@
 				641DF235259BA0B900DC29B3 /* Providers */,
 				644EF23E2598F92100B8A1D9 /* Models */,
 				644EF1E92598E34100B8A1D9 /* Networking */,
+				641DF278259C191800DC29B3 /* Local Storage */,
 				644EF2522598FD9C00B8A1D9 /* Common */,
 				6471250225985FB000B8D38E /* Assets */,
 				647124C125984E9800B8D38E /* Job HubTests */,
@@ -383,7 +423,6 @@
 				647124AE25984E9500B8D38E /* Main.storyboard */,
 				647124B625984E9800B8D38E /* LaunchScreen.storyboard */,
 				647124B925984E9800B8D38E /* Info.plist */,
-				647124B125984E9500B8D38E /* Job_Hub.xcdatamodeld */,
 			);
 			path = "Job Hub";
 			sourceTree = "<group>";
@@ -745,6 +784,7 @@
 				641DF1E8259B743400DC29B3 /* TextColorTheme.swift in Sources */,
 				641DF238259BA12900DC29B3 /* CompanyImageProvider.swift in Sources */,
 				644EF2482598FC7300B8A1D9 /* JobListProvider.swift in Sources */,
+				641DF285259C1E1400DC29B3 /* CoreDataService.swift in Sources */,
 				641DF240259BA4F400DC29B3 /* KingFisherImageService.swift in Sources */,
 				641DF21C259B7D7C00DC29B3 /* UITextView+Extensions.swift in Sources */,
 				647125882598BD4500B8D38E /* ThemeService.swift in Sources */,
@@ -756,19 +796,23 @@
 				644EF24E2598FCDF00B8A1D9 /* GitHubJobListService.swift in Sources */,
 				64514C482599EB2900641A6C /* JobDetailsProvider.swift in Sources */,
 				64514C622599FC1500641A6C /* UIView+Extensions.swift in Sources */,
+				641DF2A9259C3BEA00DC29B3 /* CoreDataCachedJobListService.swift in Sources */,
 				641DF20F259B7B0600DC29B3 /* TextThemeType.swift in Sources */,
 				64514C3D2599EA4B00641A6C /* JobDetailsViewController.swift in Sources */,
 				644EF266259902D400B8A1D9 /* Date+Extensions.swift in Sources */,
 				644EF1EB2598E35800B8A1D9 /* APIManager.swift in Sources */,
 				644EF2182598E5D800B8A1D9 /* GetJobListResponse.swift in Sources */,
+				641DF2A1259C2F4600DC29B3 /* CoreDataService+CDJob.swift in Sources */,
 				644EF2352598F45D00B8A1D9 /* JobListViewController.swift in Sources */,
 				64514C5D2599FA1F00641A6C /* JobDetailsHowToApplyTableViewCell.swift in Sources */,
 				647124B325984E9500B8D38E /* Job_Hub.xcdatamodeld in Sources */,
 				641DF217259B7C6A00DC29B3 /* UILabel+Extensions.swift in Sources */,
 				647124A925984E9500B8D38E /* AppDelegate.swift in Sources */,
+				641DF28D259C206D00DC29B3 /* CoreDataEntityType.swift in Sources */,
 				647125772598B96500B8D38E /* Theme.swift in Sources */,
 				64712504259860E700B8D38E /* R.generated.swift in Sources */,
 				644EF2402598F92D00B8A1D9 /* Job.swift in Sources */,
+				641DF2AF259C3C7A00DC29B3 /* CachedJobListProvider.swift in Sources */,
 				64514C4D2599EBC000641A6C /* LocalJobDetailsService.swift in Sources */,
 				64514C422599EAF000641A6C /* JobDetailsViewModel.swift in Sources */,
 				641DF1B7259B4DEA00DC29B3 /* JobListNavigationController.swift in Sources */,

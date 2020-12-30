@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19F101" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CDJob" representedClassName="CDJob" syncable="YES" codeGenerationType="class">
+        <attribute name="company" attributeType="String"/>
+        <attribute name="companyLogo" optional="YES" attributeType="String"/>
+        <attribute name="companyURL" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="howToApply" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="jobDescription" attributeType="String"/>
+        <attribute name="jobType" attributeType="String"/>
+        <attribute name="location" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="url" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="CDJob" positionX="-54" positionY="-9" width="128" height="208"/>
+    </elements>
+</model>

@@ -18,10 +18,10 @@ struct Job {
 	let companyLogo: String?
 }
 
-enum JobType {
-	case contract
-	case fullTime
-	case partTime
+enum JobType: String {
+	case contract = "contract"
+	case fullTime = "fullTime"
+	case partTime = "partTime"
 }
 
 extension Job: Equatable {
